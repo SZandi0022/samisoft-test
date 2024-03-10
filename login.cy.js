@@ -2,6 +2,7 @@
 describe('test suit login',function(){
     it ('doshboard test', ()=>{
         cy.visit("./project/login/login.html")
+        
     
         cy.get('#login-email').type("saeedzandi29@gmail.com",{delay:100})
         cy.get('#login-password').type("abc123456789",{delay:100})
@@ -23,11 +24,12 @@ describe('test suit login',function(){
             it ('mouse action', ()=>{
                 cy.visit("./project/login/login.html")
             
-                cy.get('#login-email').type("saeedzandi29@gmail.com",{delay:50}).dblclick()
+                cy.get('#login-email').type("saeedzandi29@gmail.com",{delay:50}).dblclick().should('have.value','saeedzandi29@gmail.com')
                 cy.get('#login-password').type("abc123456789",{delay:50})
+
                 cy.contains("Log In").click()
                 cy.get('a').click()
-                cy.get('.signup-container').rightclick()
+               
             })
             })
         
