@@ -1,20 +1,27 @@
 /// <refrence types = *cypress* />
+
 describe('test suit login',function(){
+    before(function (){
     it ('doshboard test', ()=>{
         cy.visit("./project/login/login.html")
         
     
         cy.get('#login-email').type("saeedzandi29@gmail.com",{delay:100})
         cy.get('#login-password').type("abc123456789",{delay:100})
-      /cy.get("button[type=submit]").click()
+      cy.log('test stup user')
     })
     })
-    //test keyword 
+    after(function(){ 
+        cy.log('Test Terddown');
+    })
+})
+   //test keyword 
     describe('test keyword login',function(){
+        
         it ('doshboard test', ()=>{
             cy.visit("./project/login/login.html")
         
-            cy.get('#login-email').type("saeedzandi29@gmail.com",{delay:50}).clear().type("saeedzandi29@gamil.com ")
+            cy.get('#login-email').type("saedzandi29@gmail.com",{delay:50}).clear().type("saedzandi29@gamil.com ")
             cy.get('#login-password').type("abc123456789",{delay:50}).type('{backspace}{home}{selectall}{del}')
             .type("Abc123456789")
             cy.get('#login-password').type("{enter}")
@@ -32,6 +39,7 @@ describe('test suit login',function(){
                
             })
             })
+        
         
            //* it('test key holde', ()=>{
                //* cy.visit("./project/login/login.html")
