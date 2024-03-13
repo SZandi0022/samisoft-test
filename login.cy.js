@@ -13,6 +13,7 @@ describe('test suit login',function(){
     })
     after(function(){ 
         cy.log('Test Terddown');
+        cy.reload()
     })
 })
    //test keyword 
